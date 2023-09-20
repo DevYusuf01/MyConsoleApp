@@ -69,5 +69,3 @@ int? d = null;
 int e = d ?? 100;
 Console.WriteLine($"Variable e: {e++}");
 Console.WriteLine($"Variable e: {e++}");
-
- 
