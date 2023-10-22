@@ -64,8 +64,43 @@ string c = a ?? "No value returned";
 Console.WriteLine($"string lenght: {b}");
 Console.WriteLine($"Variable c: {c}");
 */
-int? d = null;
+//int? d = null;
 
-int e = d ?? 100;
+/*int e = d ?? 100;
 Console.WriteLine($"Variable e: {e++}");
 Console.WriteLine($"Variable e: {e++}");
+
+Console.WriteLine(2 + 70 / 10);*/
+using System.Runtime.CompilerServices;
+
+class Program
+{
+static void Main()
+{
+    Console.Title = "Student Score Sheet";
+    Console.Write("Enter the number of subjects taken: ");
+    int noOfSubjectsTaken = int.Parse(Console.ReadLine()!);
+    int[] scores = new int[noOfSubjectsTaken];
+    string[] subjectNames = new string[noOfSubjectsTaken];
+    double totalScore = 0;
+    double averageScore = 0;
+
+  for (int i = 0; i < noOfSubjectsTaken; i++)  
+  {
+    Console.Write($"Enter your subject name: ");
+    subjectNames[i] = Console.ReadLine()!;
+
+    Console.Write($"Enter score for {subjectNames[i]}: ");
+    scores[i] = int.Parse(Console.ReadLine()!);
+
+    totalScore += scores[i];
+  }
+
+
+Console.WriteLine();
+
+averageScore += totalScore / noOfSubjectsTaken;
+Console.WriteLine("Average Score: {0}\nTotal Score {1}", averageScore, totalScore);
+}
+
+}
